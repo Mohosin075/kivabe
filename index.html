@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kivabe.com</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!--header start-->
+    <header>
+        <div class="sub-container">
+            <div class="logo">
+                <a href="#"><img src="images/logo.png" alt="logo"></a>
+            </div>
+            <div class="info">
+                <a href="">Log In</a>
+                <p>or</p>
+                <a href="">Sign Up</a>
+        </div>
+        </div><!--subcontainer end-->
+        <div class="menutrigger">
+            <img src="images/nav.JPG" alt="">
+        </div>
+         <!--menu start-->
+        <div class="menu">
+            
+            <ul>
+                <li><a href="">home</a></li>
+                <li><a href="">about us</a></li>
+                <li><a href="">our work</a></li>
+                <li><a href="">contact</a></li>
+                <li class="other"><a href="">other</a>
+                    <ul class="sub-ul">
+                        <li><a href="">single page</a></li>
+                        <li><a href="">our blog</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--menu end-->
+
+        <!--slider start-->
+        <div class="slider">
+            <div onclick="prev()" class="prev arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            <div class="item">
+                <img src="images/slide-1.jpg" alt="slider">
+                <div class="text">
+                    <h3>Lorem, ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div onclick="next()" class="next arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+
+    </header><!--header end-->
+
+
+    <div class="post">
+        <div class="post-item">
+            <img src="images/post-1.jpg" alt="post img">
+            <h3>Lorem ipsum dolor sit.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita corporis hic placeat, consequatur est enim!</p>
+        </div>
+        
+        <div class="post-item">
+            <img src="images/post-2.jpg" alt="post img">
+            <h3>Lorem ipsum dolor sit.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita corporis hic placeat, consequatur est enim!</p>
+        </div>
+        <div class="post-item">
+        <img src="images/post-3.jpg" alt="post img">
+        <h3>Lorem ipsum dolor sit.</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita corporis hic placeat, consequatur est enim!</p>
+    </div>
+    
+    <div class="post-item">
+        <img src="images/post-4.jpg" alt="post img">
+        <h3>Lorem ipsum dolor sit.</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita corporis hic placeat, consequatur est enim!</p>
+    </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2022 - All rights reserved by <a href="#">Developers</a>  </p>
+    </footer>
+
+     
+
+
+    <script src="js/all.min.js"></script>
+    <script>
+        
+var photos = ["images/slide-1.jpg", "images/slide-2.jpg", "images/slide-3.jpg"];
+
+var imgTag = document.querySelector('.item img');
+
+var count = 0;
+
+
+
+function next(){
+count++;
+if(count>=photos.length){
+  count= 0;
+  imgTag.src = photos[count]
+}else{
+imgTag.src = photos[count]
+}
+
+if(count==1){
+    console.log('one')
+}
+}
+
+
+
+function prev(){
+  count--;
+  if(count<0){
+    count = photos.length - 1;
+    imgTag.src = photos[count];
+  }else{
+    imgTag.src = photos[count];
+  }
+}
+
+
+var menutrigger = document.querySelector(".menutrigger").addEventListener("click", function(){
+    var menu = document.querySelector(".menu");
+    menu.classList.toggle("block")
+    var slider = document.querySelector('.slider');
+    slider.classList.toggle("margin")
+})
+    </script>
+    </div>
+</body>
+</html>
